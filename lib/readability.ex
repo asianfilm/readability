@@ -206,7 +206,7 @@ defmodule Readability do
     html_str = html_tree |> raw_html
 
     Regex.replace(tags_to_br, html_str, &"\n#{&1}")
-    |> Floki.parse()
+    |> Floki.parse_document!()
     |> Floki.text()
     |> String.trim()
   end
@@ -219,7 +219,7 @@ defmodule Readability do
     html_tree |> Floki.raw_html(encode: false)
   end
 
-  def parse(raw_html) when is_binary(raw_html), do: Floki.parse(raw_html)
+  def parse(raw_html) when is_binary(raw_html), do: Floki.parse_document!(raw_html)
 
   def regexes(key), do: @regexes[key]
 

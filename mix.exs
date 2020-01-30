@@ -13,7 +13,7 @@ defmodule Readability.Mixfile do
     [
       app: :readability,
       version: @version,
-      elixir: "~> 1.3",
+      elixir: "~> 1.9",
       description: @description,
       package: package(),
       build_embedded: Mix.env() == :prod,
@@ -40,12 +40,12 @@ defmodule Readability.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:floki, "~> 0.20"},
-      {:httpoison, "~> 0.13.0"},
-      {:ex_doc, "~> 0.14", only: :dev},
-      {:credo, "~> 0.9", only: [:dev, :test]},
-      {:dialyxir, "~> 0.3", only: [:dev]},
-      {:mock, "~> 0.2.0", only: :test}
+      {:floki, "~> 0.25"},
+      {:httpoison, "~> 1.6"},
+      {:ex_doc, "~> 0.21", only: :dev},
+      {:credo, "~> 1.2.1", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 0.5", only: [:dev]},
+      {:mock, "~> 0.3", only: :test}
     ]
   end
 
